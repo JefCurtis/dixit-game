@@ -1,9 +1,4 @@
-# Gatsby React Bootstrap Starter
+### WIP
 
-A GatsbyJS starter that includes
-
-- react-bootstrap
-- react-icons
-- sticky on scroll navbar
-- SASS compiler
-- basic layout
+A simple online version of Dixit.
+https://boardgamegeek.com/boardgame/39856/dixit
