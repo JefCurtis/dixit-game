@@ -62,7 +62,7 @@ const CustomNavbar = ({ pageInfo }) => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav class="w-100">
+          <Nav className="w-100">
             <PlayerCardsDeck players={players}></PlayerCardsDeck>
           </Nav>
         </Navbar.Collapse>

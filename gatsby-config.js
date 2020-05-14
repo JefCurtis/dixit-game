@@ -2,8 +2,8 @@ module.exports = {
   pathPrefix: "/gatsby-react-bootstrap-starter",
   siteMetadata: {
     title: `Dixit game`,
-    description: `A starter that includes react-bootstrap and react-icons, along with SASS compilation.`,
-    author: `Billy Jacoby`,
+    description: `A simple Dixit game clone`,
+    author: `Jef Curtis`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,12 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-react-bootstrap`,
-        short_name: `react-bootstrap`,
+        name: `Dixit Game`,
+        short_name: `dixit`,
         start_url: `/`,
         background_color: `#20232a`,
         theme_color: `#20232a`,
         display: `minimal-ui`,
+        icon: `src/images/dixit.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
