@@ -1,0 +1,209 @@
+
+/**** LAYOUT STYLES - NO NEED TO CHANGE THESE ****/
+.container {
+  max-width: 700px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.row {
+  margin-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+/**** PLAYER CARDS - THE BOXES AT THE VERY TOP ****/
+.player-cards {
+  margin-top: .25rem;
+  margin-right: 0;
+  margin-left: 0;
+  justify-content: center;
+}
+
+.player-cards .card-container {
+  padding-right: .25rem;
+  padding-left: 0;
+  margin-bottom: .25rem;
+}
+
+.player-cards .card-title {
+  border-bottom: 1px solid lightgray;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.score {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 0;
+}
+
+.points {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.player-cards .card-body {
+  padding: 5px 5px;
+}
+
+.storyteller-card div:first-child {
+  border-color: #007bff;
+  background: #007bff1c;
+}
+
+.storyteller-badge {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.waiting-card {
+  background: #6c757c14;
+  border-color: #6c757d;
+}
+
+.waiting-card .badge {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.selecting-card {
+  background: #0080001a;
+  border-color: #28a745;
+}
+
+.selecting-card .badge {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.image-deck img {
+  width: 100%;
+}
+
+.image-deck .image-card {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  margin-bottom: .5rem;
+}
+
+.image-deck.overlay .image-card img {
+  filter: brightness(0.7);
+} 
+
+.image-deck .badge.badge-success {
+  position: absolute;
+  top: 9px;
+  right: 14px;
+}
+
+.image-deck .selected-image {
+  border: 2px solid;
+  border-color: #0d7eff;
+}
+
+.image-card .badge-info {
+  font-size: 15px;
+}
+
+.game-state {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  margin-bottom: .5rem;;
+}
+
+.game-state .label {
+  margin-bottom: 0;
+}
+
+.game-state .form-group {
+  margin-bottom: 0;
+}
+
+.game-state .alert {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  padding-bottom: .5rem;
+}
+
+.scoring-container .player-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.scoring-container .list-group-item {
+  padding: .5rem .5rem;
+}
+
+.scoring-container .list-group-item ul {
+  font-size: 14px;
+}
+
+.scoring-container .list-group-item .row {
+  margin-bottom: 0;
+}
+
+.scoring-container .list-group-item img {
+  width: 74px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  padding: 2px;
+}
+
+/* score container v2 */
+.scoring-container .card-title {
+  display: inline;
+}
+
+.scoring-container .vote-badge {
+  font-size: 13px;
+}
+
+.scoring-container h6 {
+  vertical-align: middle;
+}
+
+.scoring-container .vote-badge.correct-guess-badge {
+  background: #0080001a;
+}
+
+.scoring-container .vote-badge.incorrect-guess-badge {
+  background: #6c757c14;
+}
+
+.scoring-container .vote-badge.vote-point-badge {
+  background: #007bff1c;
+}
+
+.scoring-container .player-name {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: #4e4d4d;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+
+.progress {
+  width: inherit;
+}
+.winning-badge {
+  height: 30px;
+  width: 80px;
+  line-height: initial;
+  padding: 4px;
+  border: 2px solid grey;
+  font-size: 13px;
+  border-color: #e9ecef;
+  margin-left: -3px;
+  color: #696868;
+}
+
+.current-points {
+  color: black;
+  font-size: 14px;
+}
+

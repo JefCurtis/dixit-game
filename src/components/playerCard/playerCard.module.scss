@@ -1,0 +1,50 @@
+.card {
+  border-radius: 1px;
+}
+.player-card {
+  padding-right: 2px;
+  padding-left: 0;
+  margin-bottom: 0.25rem;
+
+  .card {
+    border-radius: 1px;
+  }
+}
+
+.title {
+  border-bottom: 1px solid lightgray;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.score {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 0;
+}
+
+.points {
+  padding-left: 2px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.body {
+  padding: 5px 5px;
+}
+
+.storyteller {
+  border-color: #007bff;
+  background: #007bff1c;
+}
+
+.waiting {
+  background: #6c757c14;
+  border-color: #6c757d;
+}
+
+.selecting {
+  background: #0080001a;
+  border-color: #28a745;
+}

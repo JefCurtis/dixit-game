@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Dicsit</title>
+	<script src="./Scripts/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="./Styles/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="./Styles/bootstrap.min.css">
+	<link rel="stylesheet" href="./Styles/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="./Styles/app.css">
+	<link rel="stylesheet" href="./Styles/state-handling.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+		
+<body>
+	<form method="post" action="./jugador.aspx" id="form1">
+		<div class="container">
+			<div class="row row-cols-3 row-cols-sm-6 player-cards">
+				<div class="col card-container storyteller-card" id="player-card-1">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-1">Player 1</div>
+							<div>
+								<span class="score" id="player-card-score-1">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+				<div class="col card-container storyteller-card" id="player-card-2">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-2">Player 2</div>
+							<div>
+								<span class="score" id="player-card-score-2">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+				<div class="col card-container storyteller-card" id="player-card-3">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-3">Player 3</div>
+							<div>
+								<span class="score" id="player-card-score-3">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+				<div class="col card-container storyteller-card" id="player-card-4">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-4">Player 4</div>
+							<div>
+								<span class="score" id="player-card-score-4">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+				<div class="col card-container storyteller-card" id="player-card-5">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-5">Player 5</div>
+							<div>
+								<span class="score" id="player-card-score-5">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+				<div class="col card-container storyteller-card" id="player-card-6">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title text-break" id="player-card-name-6">Player 6</div>
+							<div>
+								<span class="score" id="player-card-score-6">0</span>
+								<span class="points">pts</span>
+							</div>
+							<div class="badge storyteller-badge">Storyteller</div>
+							<div class="badge waiting-badge">Waiting</div>
+							<div class="badge selecting-badge">Selecting</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row no-gutters game-state-container">
+				<div class="col-12 game-state" id="storyteller-state">
+					<div class="alert alert-primary">
+						<form class="form-group">
+							<label for="description"><strong>You are the storyteller</strong></label>
+							<textarea class="form-control" id="description" rows="2"></textarea>
+							<div class="row">
+								<div class="col-9 pr-0">
+									<small class="form-text text-muted">Select a card and tell us a story about that card.</small>
+								</div>
+								<div class="col-3 mt-2 text-right">
+									<button type="button" class="btn btn-outline-primary btn-sm">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-12 game-state" id="waiting-state">
+					<div class="alert alert-secondary">
+						<div class="form-group">
+							<strong>You are waiting for the storyteller</strong>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 game-state" id="selecting-state">
+					<div class="alert alert-primary">
+						<span>INSERT STORYTELLER STORY HERE!</span>
+					</div>
+				</div>
+			</div>
+			<span id="lblScoring">
+			<div class="row no-gutters scoring-container">
+				<div class="col-12">
+					<strong>Scoring</strong>
+				</div>
+				<div class="col-12">
+					<ul class="list-group">
+						<li class="list-group-item" id="score-card-1">
+							<div class="media">
+								<div class="media-body">
+									<div class="row">
+										<div class="col-12">
+											<div class="row">
+												<div class="mr-1">
+													<img
+														src="http://coronadicsit.data-core.info/Cards/H02.png"
+														alt="dixit card"
+														>
+												</div>
+												<div class="col-9 pl-1">
+													<div class="row">
+														<div class="col-12 pl-2 pr-2">
+															<p class="score-card-name-1">Player 1</p>				
+														</div>			
+														<div class="col-12 mb-1 pl-2 pr-2">
+															<span class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge">
+																<span class="mr-2" id="score-card-1-player-1-name">Player 1</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge"
+																id="score-card-1-player-2-badge"
+																runat="server"
+																>
+																<span class="mr-2" id="score-card-1-player-2-name">Player 2</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge"
+																id="score-card-1-player-3-badge"
+																runat="server"
+																>
+																<span class="mr-2" id="score-card-1-player-3-name">Player 3</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge"
+																id="score-card-1-player-4-badge"
+																runat="server"
+																>
+																<span class="mr-2"  id="score-card-1-player-4-name">Player 4</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge"
+																id="score-card-1-player-5-badge"
+																runat="server"
+																>
+																<span class="mr-2" id="score-card-1-player-5-name">Player 5</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 mb-1 badge badge-light border border-primary vote-point-badge"
+																id="score-card-1-player-6-badge"
+																runat="server"
+																>
+																<span class="mr-2" id="score-card-1-player-6-name">Player 6</span>
+																<span class="badge badge-primary">1pts</span>
+															</span>
+														</div>
+														<div class="col-12 mb-1 pl-2 pr-2">
+															<span 
+																class="vote-badge p-2 badge badge-light border border-success correct-guess-badge"
+																id="score-card-1-right-guess"
+																runat="server"
+																>
+																<span class="mr-2">You guessed right</span>
+																<span class="badge badge-success">3pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 badge badge-light border border-secondary incorrect-guess-badge"
+																id="score-card-1-wrong-guess"
+																runat="server"
+																>
+																<span class="mr-2">You guessed wrong</span>
+																<span class="badge badge-secondary">0pts</span>
+															</span>
+															<span
+																class="vote-badge p-2 badge badge-light border border-success correct-guess-badge"
+																id="score-card-1-storyteller-right"
+																runat="server"
+																>
+																<span class="mr-2">votes > 1 but < all</span>
+																<span class="badge badge-secondary">3pts</span>
+															</span>
+															<span
+															class="vote-badge p-2 badge badge-light border border-secondary incorrect-guess-badge"
+																id="score-card-1-storyteller-wrong"
+																runat="server"
+																>
+																<span class="mr-2">votes == 0 or == all</span>
+																<span class="badge badge-secondary">0pts</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 d-flex align-items-center pl-2 pr-2">
+											<div class="progress">
+												<div 
+													class="progress-bar bg-secondary"
+													id="score-card-1-previous-score-percentage"
+													style="width: 57.5%"
+													runat="server"
+													>
+													<span class="d-none d-sm-block" id="score-card-1-previous-score">17pts</span>
+												</div>
+												<div
+													class="progress-bar bg-primary" 
+													id="score-card-1-voting-score-percentage"
+													style="width: 7%"
+													runat="server"
+													>
+													<span class="d-none d-sm-block" id="score-card-1-voting-score">2pts</span>
+												</div>
+												<div
+													class="progress-bar bg-success"
+													id="score-card-1-guessing-score-percentage"
+													style="width: 10%"
+													runat="server"
+													>
+													<span class="d-none d-sm-block" id="score-card-1-guessing-score">3pts</span>
+												</div>
+											</div>
+											<div class="badge badge-pill winning-badge">
+												<span class="current-points" id="score-card-1-current-score">22</span>/30pts
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</span>
+			<div class="row no-gutters row-cols-2 row-cols-md-3 image-deck show-image-deck">
+				<div class="col image-card selected-image-card">
+					<div></div>
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+				<div class="col image-card new-image-card">
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+				<div class="col image-card">
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+				<div class="col image-card">
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+				<div class="col image-card">
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+				<div class="col image-card">
+					<span class="badge badge-success">NEW CARD</span>
+					<img src="http://coronadicsit.data-core.info/Cards/H02.png" alt="dixit card" class="img-thumbnail">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>
