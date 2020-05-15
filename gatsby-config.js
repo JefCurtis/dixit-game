@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/gatsby-react-bootstrap-starter",
+  pathPrefix: "/dixit-game",
   siteMetadata: {
     title: `Dixit game`,
     description: `A simple Dixit game clone`,

@@ -4,6 +4,10 @@ import { Link } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
 import DixitIcon from "../images/dixit.png"
 import PlayerCardsDeck from "./playerCardsDeck/playerCardsDeck"
+// import firebaseApiService from "../services/firebase-api"
+// firebaseApiService.createGame().then(game => {
+//   console.log("new game created", game)
+// })
 
 const players = [
   {

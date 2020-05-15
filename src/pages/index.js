@@ -1,90 +1,73 @@
-import React from "react"
-import { Row, Col, Container, ListGroup } from "react-bootstrap"
-
+import React, { useState } from "react"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Link, navigate } from "gatsby"
+import firebaseApiService from "../services/firebase-api"
 
-const IndexPage = () => (
-  <Layout pageInfo={{ pageName: "index" }}>
-    <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
-    <Container className="text-center">
-      <Row>
-        <Col>
-          <p>
-            This is a Gatsby Starter that I frequently use to get jump started
-            on quick website builds. It includes the following packages:
-          </p>
-        </Col>
-      </Row>
-      <Row className="justify-content-center my-3">
-        <Col md="6">
-          <ListGroup>
-            <ListGroup.Item
-              action
-              href="https://getbootstrap.com"
-              target="_blank"
-            >
-              Bootstrap
-            </ListGroup.Item>
-            <ListGroup.Item
-              action
-              href="https://react-bootstrap.github.io/"
-              target="_blank"
-            >
-              react-bootstrap
-            </ListGroup.Item>
-            <ListGroup.Item
-              action
-              href="https://react-icons.netlify.com"
-              target="_blank"
-            >
-              react-icons
-            </ListGroup.Item>
-            <ListGroup.Item
-              action
-              href="https://www.gatsbyjs.org/packages/gatsby-plugin-sass/"
-              target="_blank"
-            >
-              gatsby-plugin-sass
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <p>
-            This starter also includes a navbar that sticks to the top of the
-            screen when the user scrolls past it, and a footer that stays at the
-            bottom of the screen.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-          <p>
-            For more documentation on these packages and how they work, please
-            refer to the pages linked in the list above.
-          </p>
-        </Col>
-      </Row>
-    </Container>
-  </Layout>
-)
+const NewPage = () => {
+  const [playerName, setPlayerName] = useState("")
+  const [gameDeck, setGameDeck] = useState("")
 
-export default IndexPage
+  const handleNewGame = event => {
+    event.preventDefault()
+    firebaseApiService
+      .createGame({ gameDeck, players: [playerName] })
+      .then(gameCode => navigate("/game", { state: { gameCode } }))
+  }
+
+  return (
+    <Layout pageInfo={{ pageName: "existing" }}>
+      <Container className="mt-3">
+        <Row>
+          <Col>
+            <h4 className="mb-4">Create a new game</h4>
+            <Form onSubmit={handleNewGame}>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Control
+                  type="text"
+                  value={playerName}
+                  placeholder="Player name"
+                  onChange={e => setPlayerName(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="existingGame" className="mb-4">
+                <Form.Control
+                  type="text"
+                  value={gameDeck}
+                  placeholder="Game deck"
+                  onChange={e => setGameDeck(e.target.value)}
+                />
+                <Form.Text className="text-muted">
+                  <a
+                    href="https://boardgamegeek.com/geeklist/171700/dixit-product-guide"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mr-1"
+                  >
+                    Read more
+                  </a>
+                  about the different expansions.
+                </Form.Text>
+              </Form.Group>
+              <Button block variant="primary" type="submit" className="mb-2">
+                New game
+              </Button>
+              <div className="text-muted text-center">
+                <span>or join an </span>
+                <Link to="/existing" className="">
+                  existing game
+                </Link>
+              </div>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  )
+}
+
+export default NewPage

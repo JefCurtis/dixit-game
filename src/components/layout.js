@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 import CustomNavbar from "./navBar"
 
-const Layout = ({ children, pageInfo }) => (
+const Layout = ({ children, pageInfo, gameCode }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -31,11 +31,7 @@ const Layout = ({ children, pageInfo }) => (
           <Row noGutters>
             <Col className="footer-col">
               <footer>
-                <span>
-                  © {new Date().getFullYear()}, Built with
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </span>
+                <span>Game code: {gameCode}</span>
               </footer>
             </Col>
           </Row>
