@@ -39,7 +39,6 @@ const players = [
 ]
 
 const CustomNavbar = ({ pageInfo }) => {
-  console.log(pageInfo)
   return (
     <>
       <Navbar
@@ -48,6 +47,7 @@ const CustomNavbar = ({ pageInfo }) => {
         bg="light"
         expand="md"
         id="site-navbar"
+        className="align-items-start"
       >
         <Link to="/" className="link-no-style">
           <Navbar.Brand>

@@ -2,7 +2,6 @@ import React from "react"
 import styles from "./playerCard.module.scss"
 import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
-
 import Badge from "react-bootstrap/Badge"
 import PropTypes from "prop-types"
 

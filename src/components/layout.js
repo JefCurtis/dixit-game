@@ -1,16 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import { Container, Row, Col } from "react-bootstrap"
 
-import Navbar from "./navBar"
+import CustomNavbar from "./navBar"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -26,7 +19,7 @@ const Layout = ({ children, pageInfo }) => (
     render={data => (
       <>
         <Container className="px-0 main">
-          <Navbar pageInfo={pageInfo} />
+          <CustomNavbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
               <main>{children}</main>
