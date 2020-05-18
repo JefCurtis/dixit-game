@@ -6,17 +6,17 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import { Link, navigate } from "gatsby"
-import firebaseApiService from "../services/firebase-api"
+import api from "../services/api"
 
 const NewPage = () => {
   const [playerName, setPlayerName] = useState("")
-  const [gameDeck, setGameDeck] = useState("")
+  const [deckVersion, setDeckVersion] = useState("")
 
   const handleNewGame = event => {
     event.preventDefault()
-    firebaseApiService
-      .createGame({ gameDeck, players: [playerName] })
-      .then(gameCode => navigate("/game", { state: { gameCode } }))
+    api
+      .createGame({ deckVersion, playerName })
+      .then(id => navigate("/game", { state: { id } }))
   }
 
   return (
@@ -26,7 +26,7 @@ const NewPage = () => {
           <Col>
             <h4 className="mb-4">Create a new game</h4>
             <Form onSubmit={handleNewGame}>
-              <Form.Group controlId="formBasicPassword">
+              <Form.Group>
                 <Form.Control
                   type="text"
                   value={playerName}
@@ -34,12 +34,12 @@ const NewPage = () => {
                   onChange={e => setPlayerName(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group controlId="existingGame" className="mb-4">
+              <Form.Group className="mb-4">
                 <Form.Control
                   type="text"
-                  value={gameDeck}
+                  value={deckVersion}
                   placeholder="Game deck"
-                  onChange={e => setGameDeck(e.target.value)}
+                  onChange={e => setDeckVersion(e.target.value)}
                 />
                 <Form.Text className="text-muted">
                   <a

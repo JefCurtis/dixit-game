@@ -4,45 +4,8 @@ import { Link } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
 import DixitIcon from "../images/dixit.png"
 import PlayerCardsDeck from "./playerCardsDeck/playerCardsDeck"
-// import firebaseApiService from "../services/firebase-api"
-// firebaseApiService.createGame().then(game => {
-//   console.log("new game created", game)
-// })
 
-const players = [
-  {
-    name: "Jef C",
-    score: 12,
-    state: "waiting",
-  },
-  {
-    name: "John S",
-    score: 9,
-    state: "storyteller",
-  },
-  {
-    name: "Rosa D",
-    score: 20,
-    state: "selecting",
-  },
-  {
-    name: "Jeremy",
-    score: 21,
-    state: "waiting",
-  },
-  {
-    name: "Abigail",
-    score: 1,
-    state: "selecting",
-  },
-  {
-    name: "Pixel",
-    score: 17,
-    state: "waiting",
-  },
-]
-
-const CustomNavbar = ({ pageInfo }) => {
+const CustomNavbar = ({ players }) => {
   return (
     <>
       <Navbar
@@ -67,7 +30,7 @@ const CustomNavbar = ({ pageInfo }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="w-100">
-            <PlayerCardsDeck players={players}></PlayerCardsDeck>
+            <PlayerCardsDeck players={players || []}></PlayerCardsDeck>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
